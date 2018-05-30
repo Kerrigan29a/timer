@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"math"
 	"os"
 	"time"
@@ -81,7 +80,7 @@ func handleDuration(duration time.Duration, mute bool) (chan struct{}, error) {
 
 		width, _, err := terminal.GetSize(int(os.Stdout.Fd()))
 		if err != nil {
-			log.Fatal(err)
+			width = 80
 		}
 
 		fmt.Print("\r")
