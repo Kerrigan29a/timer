@@ -1,6 +1,8 @@
 builds:
   - main: main.go
     binary: timer
+    env:
+      - CGO_ENABLED=1
     goos:
       - linux
       - darwin
