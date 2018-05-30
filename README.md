@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Kerrigan29a/timer.svg)](https://travis-ci.org/Kerrigan29a/timer)
 [![Build status](https://ci.appveyor.com/api/projects/status/631c0o3qt1p34k0d?svg=true)](https://ci.appveyor.com/project/Kerrigan29a/timer)
+[![Maintainability](https://api.codeclimate.com/v1/badges/84e2b9806b014e357c5a/maintainability)](https://codeclimate.com/github/Kerrigan29a/timer/maintainability)
 [![Go Report Card](https://goreportcard.com/badge/github.com/kerrigan29a/timer)](https://goreportcard.com/report/github.com/kerrigan29a/timer)
 [![GolangCI](https://golangci.com/badges/github.com/kerrigan29a/timer.svg)](https://golangci.com)
 [![GoDoc](https://godoc.org/github.com/Kerrigan29a/timer?status.svg)](https://godoc.org/github.com/Kerrigan29a/timer)
