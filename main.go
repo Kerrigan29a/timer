@@ -15,14 +15,22 @@ import (
 	"golang.org/x/crypto/ssh/terminal"
 )
 
-var version string
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
 
 func parseArgs(mute, repeat *bool) []time.Duration {
 	flag.Usage = func() {
+		fmt.Println("")
 		fmt.Printf("Usage:  %s [OPTIONS] duration...\n", os.Args[0])
 		flag.PrintDefaults()
 		fmt.Println("")
 		fmt.Printf("Version: %s\n", version)
+		fmt.Printf("Commit: %s\n", commit)
+		fmt.Printf("Date: %s\n", date)
+		fmt.Println("")
 	}
 	flag.BoolVarP(mute, "mute", "m", false, "Mute sound")
 	flag.BoolVarP(repeat, "repeat", "r", false, "Repeat")

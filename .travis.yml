@@ -12,8 +12,8 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install libasound2-dev ; fi
 install:
   - go get -v golang.org/x/tools/cmd/stringer
-  - go get -v github.com/golang/dep/cmd/dep
-  - "$HOME/gopath/bin/dep ensure -v -vendor-only"
+  # - go get -v github.com/golang/dep/cmd/dep
+  # - "$HOME/gopath/bin/dep ensure -v -vendor-only"
 script:
   - make
   - ./timer 3s -m
