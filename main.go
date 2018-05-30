@@ -130,17 +130,20 @@ func playSong() (chan struct{}, error) {
 	/* Load sound */
 	box := packr.NewBox("./resources")
 	f, err := box.Open("gong.wav")
-	defer f.Close()
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("unable to open the audio file: %s", err.Error())
 	}
+	defer f.Close()
 	s, format, err := wav.Decode(f)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("unable to decode the audio file: %s", err.Error())
 	}
 
 	/* Init speaker */
-	speaker.Init(format.SampleRate, format.SampleRate.N(time.Second/10))
+	err = speaker.Init(format.SampleRate, format.SampleRate.N(time.Second/10))
+	if err != nil {
+		return nil, fmt.Errorf("unable to init the speaker: %s", err.Error())
+	}
 
 	/* Play sound */
 	done := make(chan struct{})
