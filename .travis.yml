@@ -7,16 +7,20 @@ os:
   - linux
   - osx
 sudo: false
-before_install:
+
+install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq update ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install libasound2-dev ; fi
-install:
   - go get -v golang.org/x/tools/cmd/stringer
   # - go get -v github.com/golang/dep/cmd/dep
   # - "$HOME/gopath/bin/dep ensure -v -vendor-only"
-script:
+
+before_script:
   - make
+script:
   - ./timer 3s -m
+after_script:
+  - make clean
 
 # calls goreleaser
 deploy:
