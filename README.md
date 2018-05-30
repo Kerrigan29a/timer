@@ -1,6 +1,9 @@
 # Timer
 
 [![Build Status](https://travis-ci.org/Kerrigan29a/timer.svg)](https://travis-ci.org/Kerrigan29a/timer)
+[![Build status](https://ci.appveyor.com/api/projects/status/631c0o3qt1p34k0d?svg=true)](https://ci.appveyor.com/project/Kerrigan29a/timer)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kerrigan29a/timer)](https://goreportcard.com/report/github.com/kerrigan29a/timer)
+[![GolangCI](https://golangci.com/badges/github.com/kerrigan29a/timer.svg)](https://golangci.com)
 [![GoDoc](https://godoc.org/github.com/Kerrigan29a/timer?status.svg)](https://godoc.org/github.com/Kerrigan29a/timer)
 
 Simple timer with acoustic alarm
