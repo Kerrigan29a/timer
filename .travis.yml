@@ -24,7 +24,7 @@ deploy:
 - provider: script
   skip_cleanup: true
   # From https://stackoverflow.com/a/8514318
-  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_linux.yml
+  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_linux.yml --rm-dist
   on:
     tags: true
     condition: 
@@ -33,7 +33,7 @@ deploy:
 - provider: script
   skip_cleanup: true
   # From https://stackoverflow.com/a/8514318
-  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_darwin.yml
+  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_darwin.yml --rm-dist
   on:
     tags: true
     condition: 
@@ -42,7 +42,7 @@ deploy:
 - provider: script
   skip_cleanup: true
   # From https://stackoverflow.com/a/8514318
-  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_windows.yml
+  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_windows.yml --rm-dist
   on:
     tags: true
     condition: 
