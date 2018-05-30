@@ -22,9 +22,9 @@ done
 
 git commit -m "Releasing $NEW_VERSION"
 echo "    Finishing release $NEW_VERSION"
-git flow release fihish $NEW_VERSION
+git flow release finish $NEW_VERSION
 
 echo "    Pushing release $NEW_VERSION"
-git push origin --tags
+git push origin $NEW_VERSION
 
 echo "DONE"
