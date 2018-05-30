@@ -4,26 +4,12 @@ builds:
     env:
       - CGO_ENABLED=1
     goos:
-      # - linux
       - darwin
-      # - windows
-      # - freebsd
-      # - netbsd
-      # - openbsd
     goarch:
       - 386
       - amd64
-      # - arm
-      # - arm64
-      # - mips
-      # - mipsle
-      # - mips64
-      # - mips64le
-    # goarm:
-    #   - 6
-    #   - 7
 checksum:
-  name_template: 'checksums.txt'
+  name_template: 'checksums_darwin.txt'
 changelog:
   sort: asc
   filters:
@@ -35,9 +21,6 @@ changelog:
 
 archive:
   format: tgz
-  format_overrides:
-    - goos: windows
-      format: zip
   replacements:
     darwin: macosx
     386: i386
@@ -45,6 +28,3 @@ archive:
   files:
       - LICENSE.md
       - README.md
-
-release:
-  name_template: "{{.Version}} (Mac OS X)"
