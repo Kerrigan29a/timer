@@ -1,0 +1,15 @@
+language: go
+go:
+  - 1.10.x
+  - master
+  - tip
+os:
+  - linux
+sudo: false
+install:
+  - go get -v golang.org/x/tools/cmd/stringer
+  - go get -v github.com/golang/dep/cmd/dep
+  - "$HOME/gopath/bin/dep ensure -v -vendor-only"
+script:
+  - make
+  - make run

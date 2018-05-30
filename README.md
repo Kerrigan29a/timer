@@ -1,5 +1,6 @@
 # Timer
 
+[![Build Status](https://travis-ci.org/Kerrigan29a/timer.svg)](https://travis-ci.org/Kerrigan29a/timer)
 [![GoDoc](https://godoc.org/github.com/Kerrigan29a/timer?status.svg)](https://godoc.org/github.com/Kerrigan29a/timer)
 
 Simple timer with acoustic alarm
