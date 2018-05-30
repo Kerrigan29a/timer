@@ -1,0 +1,22 @@
+version: "{build}"
+
+platform: x64
+
+clone_folder: c:\gopath\src\github.com\Kerrigan29a\timer
+
+environment:
+  GOPATH: c:\gopath
+
+install:
+  - echo %PATH%
+  - echo %GOPATH%
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - go version
+  - go env
+
+build_script:
+  - go run tools/packr.go -v -z
+  - go build
+
+test_script:
+  - timer.exe 3s -m
