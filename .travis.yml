@@ -15,11 +15,9 @@ install:
   # - go get -v github.com/golang/dep/cmd/dep
   # - "$HOME/gopath/bin/dep ensure -v -vendor-only"
 
-before_script:
-  - make
 script:
+  - make
   - ./timer 3s -m
-after_script:
   - make clean
 
 # calls goreleaser
