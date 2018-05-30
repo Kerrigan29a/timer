@@ -23,7 +23,26 @@ script:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: curl -sL https://git.io/goreleaser | bash
+  # From https://stackoverflow.com/a/8514318
+  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_linux.yml
+  on:
+    tags: true
+    condition: 
+      - $TRAVIS_OS_NAME = linux
+      - $TRAVIS_GO_VERSION =~ ^1\.[0-9]+\.[0-9]+$
+- provider: script
+  skip_cleanup: true
+  # From https://stackoverflow.com/a/8514318
+  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_darwin.yml
+  on:
+    tags: true
+    condition: 
+      - $TRAVIS_OS_NAME = osx
+      - $TRAVIS_GO_VERSION =~ ^1\.[0-9]+\.[0-9]+$
+- provider: script
+  skip_cleanup: true
+  # From https://stackoverflow.com/a/8514318
+  script: curl -sL https://git.io/goreleaser | bash -s - -f .goreleaser_windows.yml
   on:
     tags: true
     condition: 
